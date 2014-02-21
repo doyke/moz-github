@@ -1,0 +1,22 @@
+{
+  "name": "Gitmoz",
+  "description": "Gitmoz – unofficial app for github on firefoxos http://github.com/tizionario/moz-github",
+  "version": "0.0.1",
+  "launch_path": "/index.htm",
+  "developer": {
+    "name": "Gianmarco Simone Tiziano",
+    "url": "http://github.com/tizionario/moz-github"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "permissions": {
+    "desktop-notification": {
+      "description": "To show new message notifications etc"
+    }
+  },
+  "icons": {
+    "64": "res/img/icon_64.png",
+    "128": "res/img/icon_128.png"
+  }
+}
