@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-        <meta name="title" content="CUPS Launcher" />
-        <meta name="description" content="A simple launcher for CUPS." />
-        <title>MozGithub</title>
-        <link rel="stylesheet" type="text/css" media="all" href="./resources/css/opensans.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="./resources/css/stylesheet.css">
-        <link rel="shortcut icon" href="./resources/img/favicon.png" type="image/x-icon" />
-        <link rel="image_src" href="./resources/img/preview.png" />
-        
-    </head>
-    <body>
-        <section id="home">
-            <div class="content">
-                <h1 class="title">MozGithub</h1>
-                <h2 class="subtitle">Descrizione qui..</h2>
-                <p><a href="www.test.it" target="_blank"><img class="center" src="resources/img/button.png" width="200" /></p>
-                <br/> 
-                <br/> 
-                <br/>
-                <!-- Inserisci questo tag nel punto in cui vuoi che sia visualizzato l'elemento pulsante +1. -->
-<div class="g-plusone" data-annotation="inline" data-width="300"></div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Firefox OS Boilerplate App</title>
+	<script type="application/javascript" src="js/jquery.js"></script>
+	<script type="application/javascript" src="js/jquerym.js"></script>
+	<link   type="text/css" href="css/jquery-mobile.css" rel="stylesheet">
+	
+</head>
 
-<!-- Inserisci questo tag dopo l'ultimo tag di pulsante +1. -->
-<script type="text/javascript">
-  window.___gcfg = {lang: 'it'};
+<body>
 
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section id="more">
-            <div class="content">
-                <h1>Testo1.</h1>
-                <p>Descrizione 1.</p>
-                <br/>                
-                <img class="center" src="resources/img/browser.png" width="1000" />
-                <br/>
-                <br/>
-                <br/>
-                <h1>Testo 2</h1>
-                <p>Descrizione 2</p>
-                <br/>                
-                <img class="center" src="resources/img/print.png" width="1000" />
-                <br/>
-                <br/>
-                <br/>
-                <h1>Testo 3.</h1>
-                <p>Descrizione 3.</p>
-                <br/>
-                <img class="center" src="resources/img/shell.png" width="1000" />
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-        </section>
-        <footer>
-            CUPS Launcher &#169; 2014 Paolo Rotolo. CUPS, the CUPS logo, and OS X are trademarks of Apple Inc. All rights reserved.
-        </footer>
-    </body>
+    <div data-role="page" id="searchpage">
+		<div data-role="header">
+			<h1>moz-github</h1>
+		</div>
+		
+		<div role="main" class="ui-content">
+		<input type="text" name="name" id="user" value="" placeholder="inserisci username github" data-mini="true" />
+		<a href="#infopage" data-role="button" id="searchbutton">Cerca</a>
+		</div>
+    </div>
+	
+	<div data-role="page" id="infopage">
+		<div data-role="header">
+			<h1>moz-github</h1>
+		</div>
+		
+		<div data-role="content">
+			<div id="result_page"></div>
+			<a data-rel="back" href="" data-role="button">indietro</a>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+		</div>
+    </div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+            var userJson;
+            $("#searchbutton").click(function(){
+                    urlbase = "https://api.github.com/users/";
+                    urlappend = "/repos";
+                    username = $("#user").val();
+                    $.get(urlbase + username + urlappend, function(data){
+                            userJson = data;
+                           
+                            //console.log(data);
+                            $(userJson).each(function(index, value){
+                                    console.log(value.name);
+                                    console.log(value.description);
+									console.log(value.stargazers_count);
+									console.log(value.forks_count);
+                                    $("#result_page").append("<ul>")
+									.append("<li>" + value.name + "</li>")
+									.append("<li>" + value.description + "</li>")
+									.append("<li>" + value.stargazers_count + "</li>")
+									.append("<li>" + value.forks_count + "</li>");
+									$("#result_page").append("</ul>")
+                            })
+                    }, "json");
+            });
+    })
+
+
+	</script>
+</body>
 </html>
