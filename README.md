@@ -1,4 +1,3 @@
-moz-github
-==========
+#moz-github
 
-Moz-github
+FirefoxOS Workshop project
