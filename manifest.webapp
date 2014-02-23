@@ -1,11 +1,11 @@
 {
   "name": "Gitmoz",
-  "description": "Gitmoz – unofficial app for github on firefoxos http://github.com/tizionario/moz-github",
+  "description": "Gitmoz – unofficial app for github on firefoxos http://github.com/moz-github/moz-github/",
   "version": "0.0.1",
   "launch_path": "/index.htm",
   "developer": {
-    "name": "Gianmarco Simone Tiziano",
-    "url": "http://github.com/tizionario/moz-github"
+    "name": "moz-github Team",
+    "url": "http://github.com/moz-github"
   },
   "installs_allowed_from": [
     "*"
