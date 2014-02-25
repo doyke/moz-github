@@ -1,8 +1,8 @@
 {
   "name": "Gitmoz",
-  "description": "Gitmoz – unofficial app for github on firefoxos http://github.com/moz-github/moz-github/",
+  "description": "Gitmoz – unofficial app for github on FirefoxOS http://github.com/moz-github/moz-github/",
   "version": "0.0.1",
-  "launch_path": "/index.htm",
+  "launch_path": "/index.html",
   "developer": {
     "name": "moz-github Team",
     "url": "http://github.com/moz-github"
