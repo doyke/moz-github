@@ -3,3 +3,7 @@ $("#searchbutton").on("Click", function (e) {
 		$( "#result_page" ).html( data );
 		    alert( "Load was performed." );
 		});
+		
+$("#backbutton").on("Click", function (e) {
+	$( "#result_page" ).empty();
+		});
